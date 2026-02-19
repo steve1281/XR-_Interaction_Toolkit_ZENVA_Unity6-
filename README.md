@@ -196,42 +196,42 @@ For more information about package signatures, refer to Package signatures.
 
 # Quiz
 
-###1. What is the most efficient way to persistently assign materials to a 3D model with multiple material slots?
+### 1. What is the most efficient way to persistently assign materials to a 3D model with multiple material slots?
 
    [O] Dragging the material onto the object in the Scene View.
    [X] Assigning materials in the model's Inspector under the Materials tab.
    [O] Writing a custom Material organizer script.
    [O] Applying materials only to the parent GameObject.
 
-###2. What is the main function of the Reflection Probe in a Unity scene?
+### 2. What is the main function of the Reflection Probe in a Unity scene?
    [O] To calculate dynamic real-time shadows.
    [O] To reduce the polygon count of complex models.
    [X] To capture a 360-degree image of the scene and apply realistic reflections to nearby surfaces.
    [O] To serve as the anchor point for teleportation.
 
-###3. Which component translates physical movement data from the XR device to update a virtual GameObject’s position and rotation?
+### 3. Which component translates physical movement data from the XR device to update a virtual GameObject’s position and rotation?
    [O] Global Volume
    [O] XR Origin
    [O] Directional Light
    [X] Tracked Pose Driver
 
-###4. Enabling plugins (like Oculus or OpenXR) in XR Plugin Management serves what core purpose?
+### 4. Enabling plugins (like Oculus or OpenXR) in XR Plugin Management serves what core purpose?
    [O] It determines the size of the imported Starter Assets.
    [X] It specifies which VR hardware platforms Unity should communicate with and support.
    [O] It automatically adjusts the Camera's Near Clipping Plane.
    [O] It manages non-VR keyboard and mouse input.
 
-###5. The Project Validation tool optimizes project settings for high-performance VR by identifying and fixing required configurations.
+### 5. The Project Validation tool optimizes project settings for high-performance VR by identifying and fixing required configurations.
    [X] True
    [O] False
 
-###6. Why is the Main Camera’s Near Clipping Plane adjusted to a very small value in a VR setup?
+### 6. Why is the Main Camera’s Near Clipping Plane adjusted to a very small value in a VR setup?
    [O] To improve overall scene frame rate.
    [O] To correctly register the player's height.
    [O] To utilize the Reflection Probe data better.
    [X] To ensure that nearby objects do not get clipped when close to the player's face.
 
-###7. What is the main architectural role of the XR Origin component on the root player GameObject?
+### 7. What is the main architectural role of the XR Origin component on the root player GameObject?
    [X] It acts as a high-level manager, defining central player settings and key references.
    [O] It is solely responsible for reading the headset's positional data.
    [O] It prevents unwanted physics collisions for the controller models.

@@ -1,4 +1,4 @@
-\# XR Interaction Toolkit (ZENVA course)
+# XR Interaction Toolkit (ZENVA course)
 
 
 

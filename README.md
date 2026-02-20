@@ -569,6 +569,84 @@ public class Faucet : MonoBehaviour
 
 
 
+# Course Conclusions
+
+- very introductory
+- no C# experience is necessary for this course
+- no discussion of setup (which is fine, but not beginner level)
+
+
+# ----- beyond this point is not in the course -----
+- and for the record, it should have been.
+
+# Add a UI
+
+## Create the Canvas
+- rclick H; UI(Canvas), Canvas  (adds a canvas)
+- double click the H, Canvas
+- switch to 2D (its a button on the Scene)
+- rclick H, Canvas; UI, Panel (add a Panel to Canvas, gives us a grey background)
+- rclick H, Canvas; UI, Text-TextMeshPro
+     - click to accept TMP essentials, then close, if first time
+     - observe that an EventSystem is added to your H
+- select H, Canvas, Text
+     - set Text: Example UI
+     - use alignment icons to center verti and hori
+     - Font Size: 66
+     - Position: -6.5 188 0
+     - Width: 1064 Height: 190
+     - (so move it to the top, stretch to fit the space basically)
+- rclick H, Canvas; UI, Button-TextMeshPro
+- select H, Canvas, Button, Text
+     - Font Size: 46
+- select H, Canvas, Button
+     - Resize to fit the text (Width: 200  Height: 65 works)
+     - move to a nice position (-20 33 0 works)
+- rclick H, Canvas; UI, Scrollbar
+     - move below button (-20 -500 0 works)
+     - make it bigger, say width 550 Height: 45
+
+## Position Canvas in 3D space
+- select H, Canvas
+     - Render Mode: World Space
+     - Scale: 0.001 0.001 0.001  
+     - Position: 0 0 0    (for now)
+- exit 2D space (so click the 2D icon again)
+- double click the H, Canvas
+- reposition the Canvas in Scene to someplace better
+     - Position: 2 1.5 1.3   (so long as you will see it while in VR)
+
+## Hook up Ray Interactor
+- note: we have one from previous work for manipulating objects
+- we will add functionality to right hand only
+- select XR Origin, Right Hand, Ray Interactor
+     - make sure UI Interaction [X] (it should be already)
+     - UI Pressed has three (3) items to setup
+     - Item one: XRI Right Interaction/UI Press
+     - Item two: XRI Right Interaction/UI Press Value
+     - Item two: XRI Right Interaction/UI Scroll
+- you could do the same on the Left Hand if you liked, just use Left Interactions
+
+
+## Connect VR Clicks to EventSystem
+- select H, EventSystem
+- observe the Input System UI Module; it allows working with mouse.
+- disable it  (hmm, can I have both? experiment later maybe)
+- add component XR UI Input Module
+- find the doohicky with the lines and adjuster bars beside the name of the component
+- looks like:
+<pre>
+----|-
+--|---
+</pre>
+- click it to bring up a preset list, select 
+<pre>
+Assets/samples/XR Interaction Toolkit/3.2.1/Starter Assets/Presets/XRI Default XR UI Input Module.preset
+</pre>
+- observe that filled in a bunch of UI Actions for us 
+- select H, Canvas
+     - add component Tracked Device Graphic RayCaster
+- this should be enough to get use started; save and test in VR
 
 
 

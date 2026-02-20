@@ -648,10 +648,91 @@ Assets/samples/XR Interaction Toolkit/3.2.1/Starter Assets/Presets/XRI Default X
      - add component Tracked Device Graphic RayCaster
 - this should be enough to get use started; save and test in VR
 
+## Connect Button to code
+- add a script, call it UIManager
+- P, Assets, Scripts; new MonoBehaviourScript, rename UIManager
+- hmm, lets drag that script into H,Canvas
+- doubleclick I, UI ManagerScript, Script UIManager
+- add a method:
+<pre>
+    public void ButtonClicked()
+    {
+        Debug.Log("UIManager::ButtonClicked was called.");
+    }
+</pre>
+- this should print out a message when the button was clicked.
+- save, unity
+- select H, Canvas, Button
+    - On Click() press +
+    - drag Canvas into Object  (since thats where we attached the script)
+    - Function drag it to UIManager.ButtonClicked
+- save, run - if you click the button, you will get a message logged to Console
 
 
+## Connect the Slider
+- the slider has a variable called Value we want to display in Console
+- there is an On Value Changed event we can connect to 
+- open the H, Canvas; UIManager script
+<pre>
+    [SerializeField]
+    private Scrollbar scrollbar;
+</pre>
+- (we will assign this to the scrollbar in the unity editor)
+- (also, I see some people using "public Scrollbar scrollbar". This works too, but is weaksauce)
+<pre>
+    public void ScrollbarChanged()
+    {
+        float value = (scrollbar?scrollbar.value: -1.0f);
+        Debug.Log("UIManager::ScrollbarChanged was called with a value of " 
+            + value.ToString("F2"));
+    }
+</pre>
+- (I used a ternary to check if scrollbar had been set; not really necessary, I suppose)
+- save, unity
+- select H, Canvas
+- drag H,Canvas,Scrollbar into Scrollbar
+- select H, Canvas, Scrollbar
+     - On Value Changed  press +
+     - Runtime (fine)
+     - None(Object) -> Canvas
+     - No Function -> UIManager.ScrollbarChanged
+- save, run, move the slider to half, 100, and back to 0. See console.
+- console will have a LOT of values displayed, ranged from 0.0 to 1.0
 
-
+## Lets display slider value "dynamically"
+- double click H, Canvas
+- click the 2D icon on the scence
+- rclick H, Canvas; UI, Text
+     - put this beside your slider (Position 385, -100, 0 works for me)
+     - set the Text to 0.0
+     - we could make it bold, black, etc. 
+     - we can hori and verti center is by pressing icons
+     - rename this from Text to ScrollBarValueText
+- open the H, Canvas; UIManager script
+- add accessor
+<pre>
+    [SerializeField]
+    private TMP_Text scrollBarValueText;
+</pre>
+- (you don't have to use the same name as unity IDE, just convience)
+- lets initially blank this:
+<pre>
+    void Start()
+    {
+        scrollBarValueText.text = string.Empty;
+    }
+</pre>
+- then in update (called every frame)
+<pre>
+ void Update()
+ {
+     
+     scrollBarValueText.text = (scrollbar ? scrollbar.value : -1.0f).ToString("F2");
+ }
+</pre>
+- save, unity
+- drag ScrollBarValueText into Scroll Bar Value Text
+- save, run.  As you drag the scrollbar nub around, the value changes on the screen.
 
 
 
